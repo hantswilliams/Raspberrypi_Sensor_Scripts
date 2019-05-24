@@ -24,5 +24,9 @@ while True:
     humidity, temperature = Adafruit_DHT.read_retry(11, 4)
     #Step 2: Send the data to a kafka stream called 'sensordata1'
     producer.send('sensordata1', {'temp': temperature, 'hum': humidity, 'wkt': str(datetime.datetime.now())})
-    #Step 3: Put the sensor to sleep for 60 seconds 
+    #Step 3: Print to confirm collecting 
+    print('Temp: {0:0.1f} C  Humidity: {1:0.1f} %'.format(temperature, humidity))
+    #Step 4: Put the sensor to sleep for 60 seconds 
     time.sleep(10)
+
+
