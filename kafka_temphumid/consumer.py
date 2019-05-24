@@ -18,6 +18,16 @@ consumer = KafkaConsumer('sensordata1', bootstrap_servers='localhost:9092', valu
 
 #Step 2: Print out the data for testing purposes 
 for message in consumer:
-	value1 = message.value
-	print (value1)
+
+	values = message.value
+
+	temperature = values['temp']
+	humidity = values['hum']
+	datetime = values['wkt']
+
+	print (values)
+	print (temperature)
+	print (humidity)
+	print (datetime)
+
 #Step 3: Send the data to mysql / postgresql / mongodb, etc.... 
