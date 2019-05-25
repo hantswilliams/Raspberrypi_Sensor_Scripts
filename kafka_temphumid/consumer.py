@@ -49,7 +49,7 @@ for message in consumer:
 	#engine.execute('INSERT INTO rawdata3 (raw_temp, raw_humidity, rawdatetime) VALUES ('+ temperature
         #        + ',' + humidity + ',' + datetime  + ')')
 
-	engine.execute('INSERT into rawdata4(raw_temp, raw_humidity, raw_datetime) values(%s, %s, %s)', (temperature, humidity,datetime))
+	engine.execute('INSERT into rawdata(raw_temp, raw_humidity, raw_datetime) values(%s, %s, %s)', (temperature, humidity,datetime))
 
 	print ("succesfully added to mySQL")
 

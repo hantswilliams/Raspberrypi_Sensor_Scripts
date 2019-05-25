@@ -8,7 +8,7 @@ connection = engine.connect()
 metadata = db.MetaData()
 
 rawdata = db.Table(
-   'rawdata4', metadata, 
+   'rawdata', metadata, 
    db.Column('id', db.Integer(), primary_key = True), 
    db.Column('raw_temp', db.String(255)), 
    db.Column('raw_humidity', db.String(255)),
